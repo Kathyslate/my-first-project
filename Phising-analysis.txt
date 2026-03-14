@@ -1,0 +1,25 @@
+PHISHING SECURITY ANALYSIS REPORT
+Date: March 14, 2026
+Subject: Analysis of Retirement-Themed Phishing Campaign
+Classification: Internal / Security Research
+1. EXECUTIVE SUMMARY
+This report analyzes a targeted phishing campaign aimed at individuals nearing retirement. The attack leverages high-pressure social engineering to harvest sensitive financial identifiers, specifically targeting Bank Verification Numbers (BVN) and account credentials.
+2. ATTACK SCENARIO
+ * Vector: Email-based Social Engineering.
+ * Context: Impersonation of a pension or financial institution.
+ * Trigger: Claims that retirement funds are ready for disbursement but require "immediate verification" to prevent account suspension.
+ * Goal: Unauthorized access to retirement accounts and identity theft.
+3. INDICATORS OF COMPROMISE (IoCs)
+ * Data Request: Explicit solicitation of PII (BVN and full account details).
+ * Psychological Trigger: Exploitation of the "Retirement Milestone" to bypass typical skepticism.
+ * Source Discrepancy: Likely lack of valid SPF/DKIM/DMARC records on the sender's domain.
+4. VULNERABILITY ASSESSMENT
+| Category | Identified Gap |
+|---|---|
+| Technical | Lack of DMARC Enforcement, allowing domain spoofing. |
+| Authentication | Absence of Multi-Factor Authentication (MFA) on the target accounts. |
+| Human Factor | Gaps in Security Awareness Training regarding official banking communication protocols. |
+5. MITIGATION STRATEGIES
+ * Enforce Strict DMARC Policies: Prevent unauthorized senders from using the organization's domain.
+ * MFA Implementation: Deploy hardware tokens or app-based MFA for all financial portals.
+ * Communication Protocol: Establish that BVN and sensitive data are never requested via email.
